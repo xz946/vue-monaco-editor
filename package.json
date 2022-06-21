@@ -22,6 +22,7 @@
   "author": "egoist <0x142857@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "emmet-monaco-es": "4.4.2",
     "monaco-editor": "^0.20.0",
     "nano-assign": "^1.0.0"
   },

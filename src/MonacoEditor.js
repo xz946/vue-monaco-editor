@@ -1,5 +1,5 @@
 import assign from 'nano-assign'
-
+import { emmetHTML } from "emmet-monaco-es";
 export default {
   name: 'MonacoEditor',
 
@@ -27,7 +27,11 @@ export default {
   model: {
     event: 'change'
   },
-
+  data() {
+    return {
+      dispose: null
+    }
+  },
   watch: {
     options: {
       deep: true,
@@ -122,6 +126,9 @@ export default {
           modified: modifiedModel
         })
       } else {
+        if (this.language === 'html') {
+          emmetHTML(monaco, ['html']);
+        } 
         this.editor = monaco.editor.create(this.$el, options)
       }
 

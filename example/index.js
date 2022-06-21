@@ -92,7 +92,7 @@ new Vue({
                 :
                 <button class="btn btn-primary" onClick={() => this.showDiff = !this.showDiff}>开始比较</button>) : null}
 
-            {!this.diff && (this.language === 'html' || this.language === 'javascript') ?
+            {!this.diff && this.language === 'javascript' ?
               <button onClick={() => {
                 alert('开发中~')
               }} class="btn">运行代码</button> : null}
